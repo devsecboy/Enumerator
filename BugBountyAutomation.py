@@ -2,24 +2,21 @@ from BugCrowd import *
 from HackerOne import *
 
 if __name__ == "__main__":
+	domains=list()
+	nodomains=list()
+	wildcardDomains=list()
+
+	hackerone=HackerOne()
+	hackerone.EnumerateHackerOne(domains, nodomains, wildcardDomains)
+	bugCrowd = BugCrowd()
+	bugCrowd.EnumerateBugCrowd(domains, nodomains, wildcardDomains)
+
 	domainFile = open("domain.txt","w")
 	noDomainFile = open("nodomain.txt","w")
 	wildDomainFile = open("wilddomain.txt","w")
-
-	domain=list()
-	nodomain=list()
-	wildcardDomain=list()
-	hackerone=HackerOne()
-	hackerone.EnumerateHackerOne(domain, nodomain, wildcardDomain)
-	domainFile.write(domain)
-	noDomainFile.write(nodomain)
-	wildDomainFile.write(wildcardDomain)
-
-	domain=list()
-	nodomain=list()
-	wildcardDomain=list()
-	bugCrowd = BugCrowd()
-	bugCrowd.EnumerateBugCrowd(domain, nodomain, wildcardDomain)
-	domainFile.write(domain)
-	noDomainFile.write(nodomain)
-	wildDomainFile.write(wildcardDomain)
+	for domain in domains:
+		domainFile.write(domain + "\n")
+	for domain in nodomains:
+		noDomainFile.write(domain + "\n")
+	for domain in wildcardDomains:
+		wildDomainFile.write(domain + "\n")

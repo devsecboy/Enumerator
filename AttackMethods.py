@@ -25,16 +25,16 @@ class AttackMethods:
 			print url
 
 	def CheckTestSSLVulnerability(self, url, programName):
-		command = "./Tools/testssl/testssl.sh " + url + " > ./" + programName + "/TestSSLResult.txt"
+		command = "./testssl.sh/testssl.sh " + url + " > ./" + programName + "/TestSSLResult.txt"
 		print os.popen(command).read()
 
 	def CheckDirbVulnerability(self, url, programName):
-		command = "./Tools/dirb/dirb " + url + " > ./" + programName + "/DirBusterResult.txt"
+		command = "./dirb/dirb " + url + " > ./" + programName + "/DirBusterResult.txt"
 		print os.popen(command).read()
 
 	#it is reuired paramerized request, currently it is not possible to test
 	def CheckTemplateInjectionVulnerability(self, url, programName):
-		command = "python ./Tools/tplmap/tplmap.py " + url + " > ./" + programName + "/TPLMAPResult.txt"
+		command = "python ./tplmap/tplmap.py " + url + " > ./" + programName + "/TPLMAPResult.txt"
 		print os.popen(command).read()
 
 	def CheckOPTIONSMethodVulnerability(self, url, programName):
@@ -55,3 +55,6 @@ class AttackMethods:
 		command = "dig TXT " + domainName
 		print command
 		print os.popen(command).read()
+
+	def CheckForKnownFiles(self, domainName):
+		#server-status

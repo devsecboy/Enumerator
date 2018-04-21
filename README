@@ -1,6 +1,11 @@
+The program is enumerate all the URLs of bugbounty platform (Hackerone, BugCrowd)
+To perform some common vulnerabilities like testssl, dirb, etc.
+
 01. git clone https://github.com/x73x61x6ex6ax61x79/Enumerator.git
 02. cd Enumerator
 03. git submodule update --init --recursive
 04. chmod 777 configure.sh
 05. ./configure.sh
 06. python BugBountyAutomation.py
+
+You can contribute to enhace the software

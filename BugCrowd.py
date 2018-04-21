@@ -14,7 +14,7 @@ class BugCrowd:
         try:
             i=1
             while i <= self.globalVariables.totalBugCrowdPage:
-                request = requests.get(self.globalVariables.bugCrowdProgramsURL+str(i), headers=self.globalVariables.httpUAHeaderBugCrowd)
+                request = requests.get(self.globalVariables.bugCrowdProgramsURL+str(i), headers=self.globalVariables.httpUAHeaderBugCrowd, timeout=10)
                 soup = BeautifulSoup(request.text, "lxml")
                 for program in soup.findAll("h4", { "class" : "bc-panel__title" }):
                     hrefTag = program.find('a', href=True)
@@ -22,7 +22,7 @@ class BugCrowd:
                     try:
                         if programURL.find("https://www.bugcrowd.com/resource/help-wanted") < 0:
                             programURL = self.globalVariables.bugCrowdURL+programURL
-                            request = requests.get(programURL, headers=self.globalVariables.httpUAHeaderBugCrowd)
+                            request = requests.get(programURL, headers=self.globalVariables.httpUAHeaderBugCrowd, timeout=10)
                             subSoup = BeautifulSoup(request.text, "lxml")
                             scopeURLs=subSoup.findAll("li", { "class" : "bc-target" })
                             for scopeURL in scopeURLs:
