@@ -3,3 +3,4 @@
 03. git submodule update --init --recursive
 04. chmod 777 configure.sh
 05. ./configure.sh
+06. python BugBountyAutomation.py
