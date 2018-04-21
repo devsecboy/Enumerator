@@ -1,0 +1,3 @@
+git clone https://github.com/x73x61x6ex6ax61x79/Enumerator.git
+sudo chmod 777 configure.sh
+./configure.sh

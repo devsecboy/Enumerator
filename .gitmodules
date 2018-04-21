@@ -1,0 +1,9 @@
+[submodule "dirb"]
+	path = dirb
+	url = https://github.com/v0re/dirb.git
+[submodule "tplmap"]
+	path = tplmap
+	url = https://github.com/epinna/tplmap
+[submodule "testssl.sh"]
+	path = testssl.sh
+	url = https://github.com/drwetter/testssl.sh
