@@ -7,3 +7,9 @@
 [submodule "testssl.sh"]
 	path = testssl.sh
 	url = https://github.com/drwetter/testssl.sh
+[submodule "CORStest"]
+	path = CORStest
+	url = https://github.com/RUB-NDS/CORStest.git
+[submodule "python-Wappalyzer"]
+	path = python-Wappalyzer
+	url = https://github.com/chorsley/python-Wappalyzer.git
