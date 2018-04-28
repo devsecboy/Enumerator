@@ -8,4 +8,9 @@ To perform some common vulnerabilities like testssl, dirb, etc.
 05. ./configure.sh
 06. python BugBountyAutomation.py
 
-You can contribute to enhace the software
+Which will generate 3 txt file in output.
+domain.txt : contains all the domains
+nodomain.txt : List of ulrs for which the tool is failed to fetch program (Ex. Mobile app, Source code review program)
+wilddomain.txt : List of all the wild card domains.
+
+Feel free to customize the code.
